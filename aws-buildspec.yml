@@ -1,17 +1,10 @@
 version: 0.2
 
-env:
-  variables:
-    GRADLE_HOME: /usr/local/gradle-4.8.1
-
 phases:
   install:
     runtime-versions:
       java: openjdk8
     commands:
-      - ls
-      - echo $PWD
-#      - cd /usr/local
       - curl -L https://services.gradle.org/distributions/gradle-4.8.1-bin.zip -o /usr/local/gradle-4.8.1-bin.zip
       - unzip /usr/local/gradle-4.8.1-bin.zip
       - rm /usr/local/gradle-4.8.1-bin.zip
@@ -22,9 +15,7 @@ phases:
   post_build:
     commands:
       - gradle build
-      - echo $PWD
-      - ls
 
 artifacts:
   files:
-    - '**/*'
+    - build/libs/demo-0.0.1-SNAPSHOT.jar
