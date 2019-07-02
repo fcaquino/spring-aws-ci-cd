@@ -16,6 +16,6 @@ public class DemoApplication {
 	@GetMapping("/")
 	public String demo()
 	{
-		return "{\"hello\":\"world\"}";
+		return "{\"hola\":\"mundo\"}";
 	}
 }
